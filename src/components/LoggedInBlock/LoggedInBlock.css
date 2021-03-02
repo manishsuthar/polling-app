@@ -1,0 +1,104 @@
+.logged-in {
+  height: 90vh;
+  padding: 2px !important;
+}
+
+.tab-button {
+  height: 40px;
+  width: 100%;
+  text-align: center;
+  border: 1px solid rgb(214, 204, 204);
+  border-radius: 15px;
+  padding: 10px;
+  cursor: pointer;
+}
+.tab-container {
+}
+.view-block {
+  height: 81.4vh;
+  overflow: auto;
+}
+
+.dropdown-menu-option {
+  top: 35px !important;
+}
+
+.image-selector {
+  display: unset !important;
+}
+
+.image-selector div {
+  cursor: pointer;
+}
+
+.image-warraper {
+  height: 90px;
+  width: 90px;
+  position: relative;
+}
+
+.image-capture-area {
+  height: 200px;
+  min-width: 100px;
+  max-width: 200px;
+  width: auto;
+}
+
+.clear-icon {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  cursor: pointer;
+}
+
+.poll-list-item-image {
+  height: 100%;
+  width: auto;
+}
+.star-icon {
+  color: grey;
+  font-size: 30px;
+  margin: 10px;
+  cursor: pointer;
+}
+
+.star-icon:hover {
+  color: goldenrod;
+}
+
+.star-icon-selected {
+  color: goldenrod;
+}
+
+.list-image {
+  width: 200px;
+  height: auto;
+}
+
+.list-item-selected {
+  border: 8px solid #e9ecef !important;
+}
+
+.poll-list-image {
+  height: 100px;
+  width: 100px;
+}
+
+.center {
+  position: absolute;
+  width: 100px;
+  height: 50px;
+  top: 50%;
+  left: 50%;
+  margin-left: -50px;
+  margin-top: -25px;
+}
+
+.poll-list-item {
+  cursor: pointer;
+}
+
+.header {
+  background-color: #00000013;
+  height: 10vh;
+}
