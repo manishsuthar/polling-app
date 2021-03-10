@@ -4,8 +4,8 @@ import LoggedInBlock from "./components/LoggedInBlock/LoggedInBlock";
 import "./App.css";
 class App extends Component {
   state = {
-    isLoggedIn: false,
-    user: null,
+    isLoggedIn: true,
+    user: { id: 100 },
   };
 
   onLoginSuccess = (user) => {

@@ -76,7 +76,7 @@
 }
 
 .list-item-selected {
-  border: 8px solid #e9ecef !important;
+  border: 8px solid #ef8256 !important;
 }
 
 .poll-list-image {
@@ -101,4 +101,7 @@
 .header {
   background-color: #00000013;
   height: 10vh;
+}
+.bnt-switch {
+  border: transparent;
 }

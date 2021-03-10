@@ -5,6 +5,7 @@ import {
   UpdatePollCount,
   userSelectedDishes,
 } from "../../Util/StorageUtil";
+import { ListItem } from "../comman/Input";
 
 export class Points extends React.PureComponent {
   selectedDishes = [];
@@ -99,42 +100,6 @@ export class Points extends React.PureComponent {
   }
 }
 
-const ListItem = ({
-  pollName,
-  pollDescription,
-  imageInfo,
-  index,
-  points = 0,
-  onSelectPoll,
-  selectedDishes,
-  user,
-}) => {
-  const isSelected = selectedDishes.includes(index);
-  return (
-    <div
-      className="col-lg-4 col-md-6 col-sm-12 poll-list-item"
-      onClick={() => onSelectPoll(index)}
-    >
-      <div
-        className={`card m-3 ${isSelected ? "list-item-selected shadow" : ""}`}
-      >
-        <img
-          className="card-img-top img-thumbnail"
-          onError={(e) => {
-            e.target.src = "https://dummyimage.com/600x400/000/fff&text=Dish";
-          }}
-          src={imageInfo}
-          alt="Card image cap"
-        />
-        <div className="card-body">
-          <h5 className="card-title">{pollName}</h5>
-          <p className="card-text">{pollDescription}</p>
-        </div>
-      </div>
-    </div>
-  );
-};
-
 const AddPoints = ({ selectedDishes = [], onSubmit, onClose }) => {
   const [dishes, setDishes] = useState(selectedDishes);
   const onPointClick = (index, point) => {
@@ -161,9 +126,10 @@ const AddPoints = ({ selectedDishes = [], onSubmit, onClose }) => {
           <div className="modal-body">
             <div className="row">
               {dishes.map((e, i) => (
-                <DishListItem
+                <ListItem
                   {...e}
                   onPointClick={onPointClick}
+                  isFull={true}
                   key={`key${i}`}
                 />
               ))}
@@ -184,50 +150,6 @@ const AddPoints = ({ selectedDishes = [], onSubmit, onClose }) => {
             >
               Save
             </button>
-          </div>
-        </div>
-      </div>
-    </div>
-  );
-};
-
-const DishListItem = ({ imageInfo, pollName, index, points, onPointClick }) => {
-  return (
-    <div className="col-12 mt-2 mb-2 shadow-sm">
-      <div className="row">
-        <div className="col-4">
-          <img className="poll-list-image" src={imageInfo} />
-        </div>
-        <div className="col-8">
-          <div>{pollName}</div>
-          <div>
-            <span
-              className={`star-icon m-1 ${
-                points > 9 ? "star-icon-selected" : ""
-              }`}
-              onClick={() => onPointClick(index, 10)}
-              text="Avg"
-            >
-              &#9733;
-            </span>
-            <span
-              className={`star-icon m-1 ${
-                points > 19 ? "star-icon-selected" : ""
-              }`}
-              onClick={() => onPointClick(index, 20)}
-              text="Good"
-            >
-              &#9733;
-            </span>
-            <span
-              className={`star-icon m-1 ${
-                points > 29 ? "star-icon-selected" : ""
-              }`}
-              onClick={() => onPointClick(index, 30)}
-              text="Execilant"
-            >
-              &#9733;
-            </span>
           </div>
         </div>
       </div>

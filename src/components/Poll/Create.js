@@ -5,7 +5,7 @@ import {
   saveUserData,
 } from "../../Util/StorageUtil";
 import { ImageSelector } from "../comman/ImageSelector";
-import { Button, Input } from "../comman/Input";
+import { Button, Input, ListItem } from "../comman/Input";
 
 export class Create extends React.PureComponent {
   items = [];
@@ -54,17 +54,7 @@ export class Create extends React.PureComponent {
   render() {
     const { userData, isAddEdit } = this.state;
     return (
-      <div className="col-12">
-        <div className="row">
-          <div className="col-12">
-            <button
-              onClick={this.onClickAdd}
-              className="btn btn-sm btn-primary m-2 float-right"
-            >
-              Add
-            </button>
-          </div>
-        </div>
+      <div className="row">
         {!!isAddEdit ? (
           <AddEditDishes
             {...isAddEdit}
@@ -72,53 +62,19 @@ export class Create extends React.PureComponent {
             onSubmit={this.onSubmit}
           />
         ) : null}
-        <div className="row">
-          {userData.map((e, i) => (
-            <ListItem {...e} onEdit={this.onEdit} key={`key${i}`} />
-          ))}
-          {!userData.length ? (
-            <div className="align-self-center m-auto">
-              <h3>No dishes Found !</h3>
-              <p>Add Some Dishes</p>
-            </div>
-          ) : null}
-        </div>
+        {userData.map((e, i) => (
+          <ListItem {...e} onEdit={this.onEdit} key={`key${i}`} />
+        ))}
+        {!userData.length ? (
+          <div className="align-self-center m-auto">
+            <h3>No dishes Found !</h3>
+            <p>Add Some Dishes</p>
+          </div>
+        ) : null}
       </div>
     );
   }
 }
-
-const ListItem = ({
-  pollName,
-  pollDescription,
-  imageInfo,
-  points = 0,
-  onEdit,
-  index,
-}) => {
-  return (
-    <div className="col-lg-4 col-md-4 col-sm-12">
-      <div className="card m-3">
-        <img
-          className="card-img-top img-thumbnail"
-          onError={(e) => {
-            e.target.src = "https://dummyimage.com/600x400/000/fff&text=Dish";
-          }}
-          src={imageInfo}
-        />
-        <div className="card-body">
-          <h5 className="card-title">{pollName}</h5>
-          <p className="card-text">{pollDescription}</p>
-          <Button
-            onClick={() => onEdit(index)}
-            className="btn btn-pill text-white btn-block btn-primary"
-            text={`Edit`}
-          />
-        </div>
-      </div>
-    </div>
-  );
-};
 
 const AddEditDishes = ({
   pollName,
