@@ -68,7 +68,7 @@ export class Points extends React.PureComponent {
           <button
             onClick={this.onPollingClick}
             disabled={!this.selectedDishes.length}
-            className="btn btn-sm btn-info m-2 float-right"
+            className="btn btn-sm btn-secondary m-2 float-right"
           >
             Polling
           </button>

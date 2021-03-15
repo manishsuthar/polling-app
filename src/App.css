@@ -31,3 +31,26 @@
     transform: rotate(360deg);
   }
 }
+
+.icon-nav{
+  height: 32px;
+  width: 32px;
+}
+
+.btn-primary{
+  background-color: #f08c65 !important;
+  border-color:#f08c65 !important;
+}
+.btn-primary:hover{
+  background-color: #b95b36 !important;
+  border-color:#c25125 !important;
+}
+
+.form-block{
+      margin: auto;
+    margin-top: 45%;
+    padding: 8px;
+    border-radius: 5px;
+  background: #434a50db;
+
+}

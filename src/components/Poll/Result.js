@@ -24,7 +24,12 @@ export class Result extends React.PureComponent {
       <div className="col-12">
         <div className="row">
           {pollList.map((e, i) => (
-            <ListItem {...e} onEdit={this.onEdit} key={`key${i}`} />
+            <ListItem
+              {...e}
+              onEdit={this.onEdit}
+              isRank={true}
+              key={`key${i}`}
+            />
           ))}
         </div>
       </div>
