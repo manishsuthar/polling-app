@@ -25,6 +25,8 @@
 
 .image-selector {
   display: unset !important;
+  visibility: visible !important;
+  opacity: 1 !important;
 }
 
 .image-selector div {

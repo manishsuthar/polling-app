@@ -55,6 +55,14 @@ export class Create extends React.PureComponent {
     const { userData, isAddEdit } = this.state;
     return (
       <div className="row">
+        <div className="col-12">
+          <button
+            onClick={this.onClickAdd}
+            className="btn btn-sm btn-primary m-2 float-right"
+          >
+            Add
+          </button>
+        </div>
         {!!isAddEdit ? (
           <AddEditDishes
             {...isAddEdit}

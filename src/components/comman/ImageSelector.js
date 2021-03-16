@@ -21,7 +21,7 @@ export const ImageSelector = ({ onImageSelect, imageInfo }) => {
   return (
     <div className="row">
       <div className="col-lg-4 col-sm-12">
-        <div className="dropdown">
+        <div className="dropdown" style={{ visibility: "visible" }}>
           <button
             className="btn btn-secondary dropdown-toggle"
             onClick={() => setToggleSelector(!toggleSelector)}
@@ -98,8 +98,8 @@ const SelectFromSystem = ({
     <div className="row">
       <div className="col-12">
         {!isSelectonDone ? (
-          <div className="form-group">
-            <input className="form-control" type="file" onChange={onChange} />
+          <div style={{ margin: "20px" }}>
+            <input type="file" onChange={onChange} />
           </div>
         ) : null}
       </div>
